@@ -68,10 +68,10 @@ io.engine.on('connection_error', (err) => {
     context: err.context,
     req: err.req
       ? {
-          url: err.req.url,
-          method: err.req.method,
-          headers: err.req.headers,
-        }
+        url: err.req.url,
+        method: err.req.method,
+        headers: err.req.headers,
+      }
       : 'No request object',
   })
 })
@@ -85,7 +85,7 @@ logger.info('Starting Socket.IO server...', {
   hasAuth: !!env.BETTER_AUTH_SECRET,
 })
 
-httpServer.listen(PORT, '0.0.0.0', () => {
+httpServer.listen(PORT, process.env.HOSTNAME || '::', () => {
   logger.info(`Socket.IO server running on port ${PORT}`)
   logger.info(`🏥 Health check available at: http://localhost:${PORT}/health`)
 })
