@@ -68,7 +68,7 @@ USER nextjs
 EXPOSE 3002
 ENV PORT=3002 \
     SOCKET_PORT=3002 \
-    HOSTNAME="0.0.0.0"
+    HOSTNAME="::"
 
 # Run the socket server directly
 CMD ["bun", "apps/sim/socket-server/index.ts"]

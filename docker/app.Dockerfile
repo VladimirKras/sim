@@ -129,6 +129,6 @@ USER nextjs
 
 EXPOSE 3000
 ENV PORT=3000 \
-    HOSTNAME="0.0.0.0"
+    HOSTNAME="::"
 
 CMD ["bun", "apps/sim/server.js"]
